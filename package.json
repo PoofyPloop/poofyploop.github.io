@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/PoofyPloop/poofyploop.github.io/issues"
   },
-  "homepage": "https://github.com/PoofyPloop/poofyploop.github.io#readme"
+  "homepage": "https://github.com/PoofyPloop/poofyploop.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
 }
