@@ -1,0 +1,19 @@
+{
+  "name": "poofyploop.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoofyPloop/poofyploop.github.io.git"
+  },
+  "author": "PoofyPloop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PoofyPloop/poofyploop.github.io/issues"
+  },
+  "homepage": "https://github.com/PoofyPloop/poofyploop.github.io#readme"
+}
