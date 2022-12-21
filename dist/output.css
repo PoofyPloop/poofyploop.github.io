@@ -715,6 +715,11 @@ video {
     background-color: transparent;
   }
 
+  .md\:bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  }
+
   .md\:p-0 {
     padding: 0px;
   }
