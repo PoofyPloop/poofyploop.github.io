@@ -687,6 +687,11 @@ video {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.hover\:text-gray-50:hover {
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:px-4 {
     padding-left: 1rem;
