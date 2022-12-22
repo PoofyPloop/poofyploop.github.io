@@ -18,5 +18,8 @@
   "homepage": "https://github.com/PoofyPloop/poofyploop.github.io#readme",
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1"
   }
 }
