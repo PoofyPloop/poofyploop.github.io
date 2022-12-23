@@ -580,6 +580,10 @@ video {
   height: 90vh;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .w-full {
   width: 100%;
 }
