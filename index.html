@@ -39,5 +39,24 @@
         </ul>
       </div>
     </div>
+
+    <script> 
+      const express = require('express')
+      const aboutPage = require('./components/about')
+      const app = express()
+      const router = express.Router()
+      
+      app.get('/', (req, res) => {
+        res.send('index.html')
+      })
+      app.get('/about', aboutPage);
+      app.get('/gitfolio', (req, res) => {
+        res.send('Hello World!')
+      })
+      app.get('/contact', (req, res) => {
+        res.send('Hello World!')
+      })
+
+      </script>
   </body>
-</html>
+  </html>
