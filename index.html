@@ -12,7 +12,7 @@
               <a href="#" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">Home</a>
             </li>
             <li>
-              <a href="/pages/about" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">About</a>
+              <a href="#" onclick="onNav('/about'); return false;" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">About</a>
             </li>
             <li>
               <a href="https://poofyploop.github.io/dist/" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">Gitfolio</a>
@@ -24,6 +24,11 @@
         </div>
       </div>
     </nav>
+    
+    <div id="root">
+
+    </div>
+
     <div class="text-white flex items-center justify-center h-96">
       <div>
         <h1>PoofyPloop</h1>
@@ -41,22 +46,29 @@
     </div>
 
     <script> 
-      const express = require('express')
-      const aboutPage = require('./components/about')
-      const app = express()
-      const router = express.Router()
-      
-      app.get('/', (req, res) => {
-        res.send('index.html')
-      })
-      app.get('/about', aboutPage);
-      app.get('/gitfolio', (req, res) => {
-        res.send('Hello World!')
-      })
-      app.get('/contact', (req, res) => {
-        res.send('Hello World!')
-      })
+      // Setting routes
+      const routes = {
+        '/' : home,
+        '/about' : about,
+        '/gitfolio' : gitfolio,
+        '/contact' : contact,
+      };
 
-      </script>
+      // Calling root div and adding content using the innerHTML method
+      const rootDiv = document.getElementById('root');
+      rootDiv.innerHTML = routes[window.location.pathname];
+
+      // Rendering pathname
+      const onNav = (pathname) => {
+        window.history.pushState(
+          {}, pathname, window.location.origin + pathname
+        )
+        rootDiv.innerHTML = routes[pathname]
+      }
+
+      window.onpopstate = () => {
+        rootDiv.innerHTML = routes[window.location.pathname]
+      }
+    </script>
   </body>
   </html>
