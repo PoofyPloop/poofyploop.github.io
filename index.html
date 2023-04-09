@@ -4,78 +4,17 @@
     <link href="dist/output.css" rel="stylesheet">
   </head>
   <body class="bg-black">
-    <nav class="bg-black border-b-[1px] border-gray-100 px-2 sm:px-4 py-2.5 shadow-[0 6px 8px -1px] shadow-gray-50/50">
-      <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="flex flex-col p-4 mt-4 border border-gray-100 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-black">
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">Home</a>
-            </li>
-            <li>
-              <a href="#" onClick="onNav('/about'); return false;" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">About</a>
-            </li>
-            <li>
-              <a href="https://poofyploop.github.io/dist/" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">Gitfolio</a>
-            </li>
-            <li>
-              <a href="/pages/contacts" class="block py-2 pl-3 pr-4 text-gray-300 hover:text-gray-50 md:border-0 md:p-0">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
     <div id="root">
-      this is a div
+      <nav id="main-nav">
+        <a href="">Home</a>
+        <a href="/about" onclick="route()">About</a>
+        <a href="/gitfolio" onclick="route()">Gitfolio</a>
+        <a href="/contact" onclick="route()">Contact</a>
+      </nav>
+      <div id="main-page"></div>
     </div>
 
-    <div class="text-white flex items-center justify-center h-96">
-      <div>
-        <h1>PoofyPloop</h1>
-        <p>━━━━━━━━━Socials━━━━━━━━━</p>
-        <ul>
-          <li><a><i class="fa-brands fa-twitter"></i></a></li>
-          <li><a><i class="fa-brands fa-github"></i></a></li>
-          <li><a href="https://www.artstation.com/poofyploop"><i class="fa-brands fa-artstation"></i></a></li>
-          <li><a><i class="fa-brands fa-twitch"></i></a></li>
-          <li><a><i class="fa-brands fa-youtube"></i></a></li>
-          <li><a><i class="fa-brands fa-steam"></i></a></li>
-          <li><a></a></li>
-        </ul>
-      </div>
-    </div>
-
-    <script> 
-      //imports
-      import aboutPage from '/pages/about'
-
-      // Setting routes
-      const routes = {
-        '/' : home,
-        '/about' : about,
-        '/gitfolio' : gitfolio,
-        '/contact' : contact,
-      };
-
-      // Calling root div and adding content using the innerHTML method
-      const rootDiv = document.getElementById('root');
-      rootDiv.innerHTML = routes[window.location.pathname];
-
-      // Rendering pathname
-      const onNav = (pathname) => {
-        window.history.pushState(
-          {}, pathname, window.location.origin + pathname
-        )
-        rootDiv.innerHTML = routes[pathname]
-      }
-
-      window.onpopstate = () => {
-        rootDiv.innerHTML = routes[window.location.pathname]
-      }
-
-      const about = `
-        <aboutPage/>
-      `
+    <script src="./js/router.js">
     </script>
   </body>
   </html>
