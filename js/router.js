@@ -10,7 +10,7 @@ const routes = {
     "/": "/pages/home.html",
     "/about": "/pages/about.html",
     "/gitfolio": "/dist/index.html",
-    "/contact": "/pages/contacts.html",
+    "/contact": "/pages/contact.html",
 }
 
 const handlerRoute = async () => {
